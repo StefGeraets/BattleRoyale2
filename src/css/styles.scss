@@ -1,5 +1,10 @@
-$background: tomato;
+// utils
+@import "./utils/variables";
+@import "./utils/root-vars";
 
-body {
-  background: $background;
-}
+// base
+@import "./base/reset";
+@import "./base/typography";
+
+// layout
+@import "./layout/main";
