@@ -12,5 +12,8 @@ Run `yarn dev` to get local development environment
 
 - **Build**: `yarn build`
 - **Start Dev environment**: `yarn dev`
-- **prettier**: `yarn prettier`
-- **linter**: `yarn lint`
+- **Prettier**: `yarn prettier`
+- **JS linter**: `yarn lint:js`
+- **Style linter**: `yarn lint:scss`
+- **Test**: `yarn test`
+- **Test watch**: `yarn test:watch`

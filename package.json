@@ -10,8 +10,10 @@
     "dev": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
     "prettier": "prettier --write .",
-    "lint": "eslint --ext .js src/",
-    "test": "jest"
+    "lint:js": "eslint --ext .js src/",
+    "lint:scss": "stylelint --config config/stylelint.config.js '**/*.scss' ",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -36,6 +38,9 @@
     "prettier": "2.3.2",
     "sass": "^1.22.12",
     "sass-loader": "^12.1.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "uniqid": "^5.0.3",
     "webpack": "^5.48.0",

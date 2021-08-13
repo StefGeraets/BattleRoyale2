@@ -1,5 +1,8 @@
 import "../css/styles.scss";
 
-const testString = (message = "random message") => `log ${message}`;
+import sum from "./sum";
 
-console.log(testString("Things here"));
+const testString = (message = "random message") => `log ${message}`;
+const output = sum(1, 2);
+
+console.log(testString("Things here"), output);
