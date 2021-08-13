@@ -1,0 +1,18 @@
+#timebar {
+  background: linear-gradient(
+      transparentize($c-gray-100, 0.9),
+      transparentize($c-gray-100, 0.9)
+    ),
+    $c-sky-900;
+  position: relative;
+
+  // example for styling
+  .timeblock {
+    position: absolute;
+    top: 10vh;
+    width: 100%;
+    height: 20vh;
+    background: $c-red-600;
+    border-top: 5vh solid $c-green-600;
+  }
+}

@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  padding: $spacing-s $spacing-base;
+  justify-content: space-between;
+  align-items: center;
+  background: $c-gray-800;
+  color: $c-gray-50;
+
+  h1 {
+    font-size: $spacing-l;
+  }
+}

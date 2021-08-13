@@ -1,0 +1,16 @@
+#settings {
+  background: $c-gray-900;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  #top {
+    flex: 80% 0 0;
+    padding: $spacing-base;
+  }
+
+  #bottom {
+    flex: 20% 0 0;
+    padding: $spacing-base;
+  }
+}
