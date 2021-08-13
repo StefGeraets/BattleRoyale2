@@ -11,9 +11,12 @@
     "build": "webpack --config config/webpack.prod.js",
     "prettier": "prettier --write .",
     "lint:js": "eslint --ext .js src/",
-    "lint:scss": "stylelint --config config/stylelint.config.js '**/*.scss' ",
+    "lint:js:fix": "lint:js -- --fix",
+    "lint:scss": "stylelint --config config/stylelint.config.js '**/*.scss' --syntax scss",
+    "lint:scss:fix": "stylelint --config config/stylelint.config.js '**/*.scss' --syntax scss --fix",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:bail": "jest --bail --findRelatedTests"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -31,7 +34,9 @@
     "file-loader": "^6.2.0",
     "hard-source-webpack-plugin": "^0.13.1",
     "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.1",
     "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
     "mini-css-extract-plugin": "^2.2.0",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
