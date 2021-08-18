@@ -1,0 +1,27 @@
+:root {
+  // grid
+  --grid-cols: 24;
+  --grid-rows: 24;
+  --cell-width: 32px;
+
+  // safe-zone
+  --safe-zone-width: 20;
+  --safe-zone-next-width: 20;
+
+  // wall
+  --wall-closing-time: 5s;
+  --wall-delay: 1s;
+  --wall-start-width: 200vw;
+  --wall-start-x: 0;
+  --wall-start-y: 0;
+  --wall-end-x: 0;
+  --wall-end-y: 0;
+
+  // mouse
+  --mouse-x: 0;
+  --mouse-y: 0;
+
+  // game time
+  --game-time: 0;
+  --time-block-countdown-height: 1vh;
+}

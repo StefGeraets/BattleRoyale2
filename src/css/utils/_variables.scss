@@ -1,0 +1,42 @@
+// Fonts
+$mono-font: "Source Code Pro";
+$sans-font: "Source Sans Pro";
+$system-font: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
+
+$main-font: $sans-font, $sans-font;
+
+$spacing-xs: 0.25rem;
+$spacing-s: 0.5rem;
+$spacing-base: 1rem; //16px default
+$spacing-md: 1.5rem;
+$spacing-l: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 8rem;
+
+// colors
+$c-white: #fff;
+$c-black: #000;
+
+$c-gray-50: #f8fafc;
+$c-gray-100: #f1f5f9;
+$c-gray-300: #cbd5e1;
+$c-gray-400: #94a3b8;
+$c-gray-600: #475569;
+$c-gray-800: #1e293b;
+$c-gray-900: #0f172a;
+
+$c-cyan-500: #06b6d4;
+
+$c-sky-600: #0284c7;
+$c-sky-700: #0369a1;
+$c-sky-800: #075985;
+$c-sky-900: #0c4a6e;
+
+$c-lime-500: #84cc16;
+
+$c-green-600: #16a34a;
+
+$c-yellow-400: #facc15;
+$c-yellow-500: #f59e0b;
+
+$c-red-600: #b45309;

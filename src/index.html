@@ -5,8 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro:wght@400;700&display=fallback"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>HALLO JAN!</h1>
+    <div id="wrapper">
+      <header>
+        <a href="rules">Rules</a>
+        <h1>WUBG <small>Wizard Unknown</small></h1>
+        <a href="info">info</a>
+      </header>
+
+      <main id="map">
+        <div id="grid"></div>
+      </main>
+
+      <div id="timebar">
+        <div class="timeblock"></div>
+      </div>
+
+      <aside id="settings">
+        <section id="top"></section>
+        <section id="bottom"></section>
+      </aside>
+    </div>
   </body>
 </html>

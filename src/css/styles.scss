@@ -1,5 +1,17 @@
-$background: tomato;
+// utils
+@import "./utils/variables";
+@import "./utils/root-vars";
 
-body {
-  background: $background;
-}
+// base
+@import "./base/reset";
+@import "./base/typography";
+
+// layout
+@import "./layout/main";
+
+// components
+@import "./components/header";
+@import "./components/grid";
+@import "./components/map";
+@import "./components/settings";
+@import "./components/timebar";
