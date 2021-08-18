@@ -2,12 +2,10 @@ import "./grid.scss";
 
 const gridContainer = document.querySelector("#grid");
 
-const renderCell = (x, y) => {
-  let cell = document.createElement("div");
-  cell.className = `grid-item grid-item-${x}-${y}`;
+const createCellElement = () => document.createElement("div");
 
-  return cell;
-};
+const renderCell = (x, y) =>
+  (createCellElement().className = `grid-item grid-item-${x}-${y}`);
 
 export const renderGrid = (rows, cols) => {
   let x = 0;
