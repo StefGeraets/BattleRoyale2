@@ -1,3 +1,6 @@
+import sum from "@app/sum";
+
+console.log(sum(1, 2));
 const gridContainer = document.querySelector("#grid");
 
 export const renderGrid = (rows, cols) => {

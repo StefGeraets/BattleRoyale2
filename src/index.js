@@ -1,6 +1,6 @@
 import "./styles.scss";
 
-import { renderGrid } from "./js/map";
+import { renderGrid } from "@app/map";
 
 renderGrid(24, 24);
 

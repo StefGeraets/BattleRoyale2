@@ -56,6 +56,13 @@ module.exports = {
     ],
   },
 
+  resolve: {
+    alias: {
+      '@app': path.resolve(__dirname, '../src/js'),
+      '@scss': path.resolve(__dirname, '../src/scss')
+    }
+  },
+
   plugins: [
     new MiniCssExtractPlugin({
       filename: "main.css",
