@@ -1,3 +1,5 @@
+import { renderGrid } from "@app/components/grid/grid";
+
 export const dmView = () => {
-  console.log("From DM UI");
+  renderGrid(24, 24);
 };
