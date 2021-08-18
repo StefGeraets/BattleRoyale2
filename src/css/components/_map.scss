@@ -1,4 +1,8 @@
 #map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: $c-sky-900;
   background: radial-gradient(circle, $c-sky-800 0%, $c-sky-900 100%);
+  overflow-y: scroll;
 }

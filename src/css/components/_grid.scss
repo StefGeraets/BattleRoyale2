@@ -1,0 +1,16 @@
+#grid {
+  display: grid;
+  grid-template-rows: repeat(var(--grid-rows), var(--cell-width));
+  grid-template-columns: repeat(var(--grid-cols), var(--cell-width));
+  margin: 0 auto;
+  border: 1px solid $c-white;
+  background-image: url("../assets/map/island.png");
+  background-size: cover;
+
+  .grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $c-white;
+  }
+}
