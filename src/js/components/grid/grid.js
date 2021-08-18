@@ -4,8 +4,8 @@ const gridContainer = document.querySelector("#grid");
 
 const createCellElement = () => document.createElement("div");
 
-const renderCell = (x, y) =>
-  (createCellElement().className = `grid-item grid-item-${x}-${y}`);
+const renderCell = (cell, x, y) =>
+  (cell.className = `grid-item grid-item-${x}-${y}`);
 
 export const renderGrid = (rows, cols) => {
   let x = 0;
@@ -16,7 +16,9 @@ export const renderGrid = (rows, cols) => {
 
   total.map((c) => {
     y = c % cols;
-    gridContainer.appendChild(renderCell(x, y));
+    const cell = createCellElement();
+    renderCell(cell, x, y);
+    gridContainer.appendChild(cell);
     if (y === rows - 1) {
       x++;
     }
