@@ -1,16 +1,17 @@
 // utils
-@import "./scss/utils/variables";
-@import "./scss/utils/root-vars";
+
+@import "@scss/utils/variables";
+@import "@scss/utils/root-vars";
 
 // base
-@import "./scss/base/reset";
-@import "./scss/base/typography";
+@import "@scss/base/reset";
+@import "@scss/base/typography";
 
 // layout
-@import "./scss/layout/main";
+@import "@scss/layout/main";
 
 // components
-@import "./scss/components/header";
-@import "./scss/components/map";
-@import "./scss/components/settings";
-@import "./scss/components/timebar";
+@import "@scss/components/header";
+@import "@scss/components/map";
+@import "@scss/components/settings";
+@import "@scss/components/timebar";
