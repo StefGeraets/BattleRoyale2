@@ -1,6 +1,8 @@
 const path = require("path");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: "./src/js/index.js",
@@ -26,34 +28,18 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
+          process.env.NODE_ENV !== 'production'
+            ? 'style-loader'
+            : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
           {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          {
-            loader: "css-loader",
-          },
-          {
-            loader: "postcss-loader",
-          },
-          {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
-              implementation: require("sass"),
-            },
-          },
-        ],
-      },
-      // Image rules
-      {
-        test: /\.(png|jpe?g|git|svg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              outputPath: "images",
-            },
-          },
-        ],
+              sourceMap: true
+            }
+          }
+        ]
       },
       // Font rules
       {
@@ -72,13 +58,17 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "bundle.css",
+      filename: "main.css",
     }),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       title: "BattleRoyale",
       template: "./src/index.html",
       favicon: "./src/favicon.ico",
+    }),
+    new CopyPlugin({
+      patterns: [{ from: 'src/assets', to: 'assets' }]
     }),
   ],
 };
