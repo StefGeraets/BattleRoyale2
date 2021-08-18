@@ -1,9 +1,5 @@
 import "./styles.scss";
 
-import { renderGrid } from "@app/map";
+import { initDMGame } from "@app/game";
 
-renderGrid(24, 24);
-
-const testString = (message = "random message") => `log ${message}`;
-
-console.log(testString("Things here"));
+initDMGame();
