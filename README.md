@@ -76,7 +76,7 @@ Run `yarn dev` to get local development environment
 [ ] Open player window
 [ ] Toggle overlay
 
-##Open player window
+## Open player window
 - takes care of visual representation (visuals + sound)
 - Listens to events
 - Animates
