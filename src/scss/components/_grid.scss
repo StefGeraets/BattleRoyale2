@@ -3,7 +3,7 @@
   grid-template-rows: repeat(var(--grid-rows), var(--cell-width));
   grid-template-columns: repeat(var(--grid-cols), var(--cell-width));
   margin: 0 auto;
-  border: 1px solid $c-white;
+  border: 1px solid transparentize($c-white, 0.85);
   background-image: url("./assets/map/island.png");
   background-size: cover;
 
@@ -11,6 +11,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid $c-white;
+    border: 1px solid transparentize($c-white, 0.85);
   }
 }
