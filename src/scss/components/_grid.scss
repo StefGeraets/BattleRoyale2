@@ -4,7 +4,7 @@
   grid-template-columns: repeat(var(--grid-cols), var(--cell-width));
   margin: 0 auto;
   border: 1px solid $c-white;
-  background-image: url("../assets/map/island.png");
+  background-image: url("./assets/map/island.png");
   background-size: cover;
 
   .grid-item {
