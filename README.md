@@ -1,4 +1,4 @@
-# BattleRoyale2.0
+# BattleRoyale2
 
 Better version of BattleRoyale
 
