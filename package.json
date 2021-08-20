@@ -88,5 +88,12 @@
       "no-prototype-builtins": "off",
       "indent": "off"
     }
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "^@app(.*)$": "<rootDir>/src/js$1",
+      "^.+\\.(css|less|scss)$": "babel-jest"
+    }
   }
 }
