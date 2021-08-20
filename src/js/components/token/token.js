@@ -2,10 +2,11 @@ import "./token.scss";
 
 import { token, grid } from "@app/data/state";
 
-const getFirstGridCell = () => document.querySelector(".grid-item");
+const getGridCell = (x, y) => document.querySelector(`.grid-item-${x}-${y}`);
+const appendToken = (target) => target.appendChild(token.element);
 
 export const placeToken = () => {
-  getFirstGridCell().appendChild(token.element);
+  appendToken(getGridCell(0, 0));
 };
 
 export const setTokenPosition = (direction) => {
@@ -29,8 +30,5 @@ export const setTokenPosition = (direction) => {
 
 export const moveToken = (direction) => {
   setTokenPosition(direction);
-  let gridItem = document.querySelector(
-    `.grid-item-${token.position.x}-${token.position.y}`
-  );
-  gridItem.appendChild(token.element);
+  appendToken(getGridCell(token.position.x, token.position.y));
 };
