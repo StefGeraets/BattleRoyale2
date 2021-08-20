@@ -1,11 +1,23 @@
 import { token, grid } from "@app/data/state";
-import { setTokenPosition } from "@app/components/token/token";
+import { placeToken, setTokenPosition } from "@app/components/token/token";
 import { UP, RIGHT, DOWN, LEFT } from "@app/data/constants";
 
 const resetState = () => {
   token.position.x = 0;
   token.position.y = 0;
 };
+
+describe("placeToken", () => {
+  it("should place the token", () => {
+    document.body.innerHTML = `<div class="grid-item-0-0"></div>`;
+    const gridItem = document.querySelector(".grid-item-0-0");
+
+    expect(gridItem.firstChild).toBeFalsy();
+
+    placeToken();
+    expect(gridItem.firstChild).toBeTruthy();
+  });
+});
 
 describe.only("setTokenPosition", () => {
   afterEach(() => {
