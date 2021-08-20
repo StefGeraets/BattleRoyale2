@@ -71,8 +71,10 @@ Run `yarn dev` to get local development environment
 - [ ] place + animate settings for wall
 - [ ] Set safeArea
 - [ ] Trigger to play sound
-- [ ] Place token
+- [x] Place token
 - [ ] Move token
+  - [x] move token logic
+  - [ ] move token listener keyboard input
 - [ ] Show total combatants
 - [ ] kill combatants based on time
 - [ ] kill combatants based on DM click
