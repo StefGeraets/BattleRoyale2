@@ -1,6 +1,7 @@
 import "./token.scss";
 
 import { token, grid } from "@app/data/state";
+import { UP, RIGHT, DOWN, LEFT } from "@app/data/constants";
 
 const getGridCell = (x, y) => document.querySelector(`.grid-item-${x}-${y}`);
 const appendToken = (target) => target.appendChild(token.element);
@@ -11,16 +12,16 @@ export const placeToken = () => {
 
 export const setTokenPosition = (direction) => {
   switch (direction) {
-    case "up":
+    case UP:
       if (token.position.y !== 0) token.position.y--;
       break;
-    case "right":
+    case RIGHT:
       if (token.position.x !== grid.cols - 1) token.position.x++;
       break;
-    case "down":
+    case DOWN:
       if (token.position.y !== grid.rows - 1) token.position.y++;
       break;
-    case "left":
+    case LEFT:
       if (token.position.x !== 0) token.position.x--;
       break;
     default:
