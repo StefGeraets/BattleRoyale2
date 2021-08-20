@@ -1,5 +1,6 @@
 import { token, grid } from "@app/data/state";
 import { setTokenPosition } from "@app/components/token/token";
+import { UP, RIGHT, DOWN, LEFT } from "@app/data/constants";
 
 const resetState = () => {
   token.position.x = 0;
@@ -13,27 +14,24 @@ describe.only("setTokenPosition", () => {
 
   describe("do change position", () => {
     it("when moving up", () => {
-      token.position.y = 2;
-      expect(token.position.y).toBe(2);
-
-      setTokenPosition("up");
+      token.position.y = 1;
       expect(token.position.y).toBe(1);
 
-      setTokenPosition("up");
+      setTokenPosition(UP);
       expect(token.position.y).toBe(0);
     });
 
     it("when moving right", () => {
       expect(token.position.x).toBe(0);
 
-      setTokenPosition("right");
+      setTokenPosition(RIGHT);
       expect(token.position.x).toBe(1);
     });
 
     it("when moving down", () => {
       expect(token.position.y).toBe(0);
 
-      setTokenPosition("down");
+      setTokenPosition(DOWN);
       expect(token.position.y).toBe(1);
     });
 
@@ -41,7 +39,7 @@ describe.only("setTokenPosition", () => {
       token.position.x = 1;
       expect(token.position.x).toBe(1);
 
-      setTokenPosition("left");
+      setTokenPosition(LEFT);
       expect(token.position.x).toBe(0);
     });
   });
@@ -51,10 +49,10 @@ describe.only("setTokenPosition", () => {
       token.position.y = 1;
       expect(token.position.y).toBe(1);
 
-      setTokenPosition("up");
+      setTokenPosition(UP);
       expect(token.position.y).toBe(0);
 
-      setTokenPosition("up");
+      setTokenPosition(UP);
       expect(token.position.y).toBe(0);
     });
 
@@ -62,10 +60,10 @@ describe.only("setTokenPosition", () => {
       token.position.x = grid.rows - 2;
       expect(token.position.x).toBe(22);
 
-      setTokenPosition("right");
+      setTokenPosition(RIGHT);
       expect(token.position.x).toBe(23);
 
-      setTokenPosition("right");
+      setTokenPosition(RIGHT);
       expect(token.position.x).toBe(23);
     });
 
@@ -73,10 +71,10 @@ describe.only("setTokenPosition", () => {
       token.position.y = grid.cols - 2;
       expect(token.position.y).toBe(22);
 
-      setTokenPosition("down");
+      setTokenPosition(DOWN);
       expect(token.position.y).toBe(23);
 
-      setTokenPosition("down");
+      setTokenPosition(DOWN);
       expect(token.position.y).toBe(23);
     });
 
@@ -84,10 +82,10 @@ describe.only("setTokenPosition", () => {
       token.position.x = 1;
       expect(token.position.x).toBe(1);
 
-      setTokenPosition("left");
+      setTokenPosition(LEFT);
       expect(token.position.x).toBe(0);
 
-      setTokenPosition("left");
+      setTokenPosition(LEFT);
       expect(token.position.x).toBe(0);
     });
   });
