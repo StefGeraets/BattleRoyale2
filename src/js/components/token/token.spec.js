@@ -24,7 +24,7 @@ describe.only("setTokenPosition", () => {
     resetState();
   });
 
-  describe("do change position", () => {
+  describe("change position state", () => {
     it("when moving up", () => {
       token.position.y = 1;
       expect(token.position.y).toBe(1);
@@ -56,7 +56,7 @@ describe.only("setTokenPosition", () => {
     });
   });
 
-  describe("does not change position at the edge of the grid", () => {
+  describe("does not change position state at the end of the grid", () => {
     it("when moving up", () => {
       token.position.y = 1;
       expect(token.position.y).toBe(1);
