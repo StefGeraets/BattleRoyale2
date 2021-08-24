@@ -1,10 +1,31 @@
 import { token, grid } from "@app/data/state";
-import { placeToken, setTokenPosition } from "@app/components/token/token";
+import { placeToken, moveToken } from "@app/components/token/token";
 import { UP, RIGHT, DOWN, LEFT } from "@app/data/constants";
 
-const resetState = () => {
-  token.position.x = 0;
-  token.position.y = 0;
+const resetDom = () => (document.body.innerHTML = ``);
+const resetGrid = () => {
+  grid.rows = 24;
+  grid.cols = 24;
+  return grid;
+};
+
+const generateSmallGrid = () =>
+  (document.body.innerHTML = `<div id="grid">
+    <div class="grid-item-0-0"></div>
+    <div class="grid-item-0-1"></div>
+    <div class="grid-item-0-2"></div>
+    <div class="grid-item-1-0"></div>
+    <div class="grid-item-1-1"></div>
+    <div class="grid-item-1-2"></div>
+    <div class="grid-item-2-0"></div>
+    <div class="grid-item-2-1"></div>
+    <div class="grid-item-2-2"></div>
+  </div>`);
+
+const setGridSize = () => {
+  grid.rows = 3;
+  grid.cols = 3;
+  return grid;
 };
 
 describe("placeToken", () => {
@@ -19,86 +40,73 @@ describe("placeToken", () => {
   });
 });
 
-describe.only("setTokenPosition", () => {
+describe("moveToken", () => {
+  beforeEach(() => {
+    generateSmallGrid();
+    setGridSize();
+  });
   afterEach(() => {
-    resetState();
+    resetDom();
+    resetGrid();
   });
 
-  describe("change position state", () => {
-    it("when moving up", () => {
-      token.position.y = 1;
-      expect(token.position.y).toBe(1);
+  it("should move token in all directions", () => {
+    const gridItem1a = document.querySelector(".grid-item-0-0");
+    const gridItem1b = document.querySelector(".grid-item-0-1");
+    const gridItem2a = document.querySelector(".grid-item-1-0");
+    const gridItem2b = document.querySelector(".grid-item-1-1");
+    gridItem1a.appendChild(token.element);
 
-      setTokenPosition(UP);
-      expect(token.position.y).toBe(0);
-    });
+    expect(gridItem1a.firstChild).toBeTruthy();
 
-    it("when moving right", () => {
-      expect(token.position.x).toBe(0);
+    moveToken(RIGHT);
+    expect(gridItem1a.firstChild).toBeFalsy();
+    expect(gridItem1b.firstChild).toBeTruthy();
 
-      setTokenPosition(RIGHT);
-      expect(token.position.x).toBe(1);
-    });
+    moveToken(DOWN);
+    expect(gridItem1b.firstChild).toBeFalsy();
+    expect(gridItem2b.firstChild).toBeTruthy();
 
-    it("when moving down", () => {
-      expect(token.position.y).toBe(0);
+    moveToken(LEFT);
+    expect(gridItem2b.firstChild).toBeFalsy();
+    expect(gridItem2a.firstChild).toBeTruthy();
 
-      setTokenPosition(DOWN);
-      expect(token.position.y).toBe(1);
-    });
-
-    it("when moving left", () => {
-      token.position.x = 1;
-      expect(token.position.x).toBe(1);
-
-      setTokenPosition(LEFT);
-      expect(token.position.x).toBe(0);
-    });
+    moveToken(UP);
+    expect(gridItem2a.firstChild).toBeFalsy();
+    expect(gridItem1a.firstChild).toBeTruthy();
   });
 
-  describe("does not change position state at the end of the grid", () => {
-    it("when moving up", () => {
-      token.position.y = 1;
-      expect(token.position.y).toBe(1);
+  it("should not move token beyond grid", () => {
+    const gridItemTopLeft = document.querySelector(".grid-item-0-0");
+    const gridItemTopRight = document.querySelector(".grid-item-0-2");
+    const gridItemBottomRight = document.querySelector(".grid-item-2-2");
+    const gridItemBottomLeft = document.querySelector(".grid-item-2-0");
+    gridItemTopLeft.appendChild(token.element);
 
-      setTokenPosition(UP);
-      expect(token.position.y).toBe(0);
+    expect(gridItemTopLeft.firstChild).toBeTruthy();
 
-      setTokenPosition(UP);
-      expect(token.position.y).toBe(0);
-    });
+    moveToken(RIGHT);
+    moveToken(RIGHT);
+    expect(gridItemTopRight.firstChild).toBeTruthy();
+    moveToken(RIGHT);
+    expect(gridItemTopRight.firstChild).toBeTruthy();
 
-    it("when moving right", () => {
-      token.position.x = grid.rows - 2;
-      expect(token.position.x).toBe(22);
+    moveToken(DOWN);
+    moveToken(DOWN);
+    expect(gridItemBottomRight.firstChild).toBeTruthy();
+    moveToken(DOWN);
+    expect(gridItemBottomRight.firstChild).toBeTruthy();
 
-      setTokenPosition(RIGHT);
-      expect(token.position.x).toBe(23);
+    moveToken(LEFT);
+    moveToken(LEFT);
+    expect(gridItemBottomLeft.firstChild).toBeTruthy();
+    moveToken(LEFT);
+    expect(gridItemBottomLeft.firstChild).toBeTruthy();
 
-      setTokenPosition(RIGHT);
-      expect(token.position.x).toBe(23);
-    });
-
-    it("when moving down", () => {
-      token.position.y = grid.cols - 2;
-      expect(token.position.y).toBe(22);
-
-      setTokenPosition(DOWN);
-      expect(token.position.y).toBe(23);
-
-      setTokenPosition(DOWN);
-      expect(token.position.y).toBe(23);
-    });
-
-    it("when moving left", () => {
-      token.position.x = 1;
-      expect(token.position.x).toBe(1);
-
-      setTokenPosition(LEFT);
-      expect(token.position.x).toBe(0);
-
-      setTokenPosition(LEFT);
-      expect(token.position.x).toBe(0);
-    });
+    moveToken(UP);
+    moveToken(UP);
+    expect(gridItemTopLeft.firstChild).toBeTruthy();
+    moveToken(UP);
+    expect(gridItemTopLeft.firstChild).toBeTruthy();
   });
 });
