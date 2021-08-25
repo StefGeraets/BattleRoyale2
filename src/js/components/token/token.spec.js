@@ -1,8 +1,8 @@
 import { token, grid } from "@app/data/state";
-import { placeToken, moveToken } from "@app/components/token/token";
+import { resetDom } from "@app/spec/helpers";
+import { placeToken, moveToken } from "./token";
 import { UP, RIGHT, DOWN, LEFT } from "@app/data/constants";
 
-const resetDom = () => (document.body.innerHTML = ``);
 const resetGrid = () => {
   grid.rows = 24;
   grid.cols = 24;
@@ -45,6 +45,7 @@ describe("moveToken", () => {
     generateSmallGrid();
     setGridSize();
   });
+
   afterEach(() => {
     resetDom();
     resetGrid();
