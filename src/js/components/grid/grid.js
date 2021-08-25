@@ -7,7 +7,7 @@ const createCellElement = () => document.createElement("div");
 const renderCell = (cell, x, y) =>
   (cell.className = `grid-item grid-item-${x}-${y}`);
 
-export const renderGrid = (rows, cols) => {
+export const renderGrid = (element = gridContainer, rows, cols) => {
   let x = 0;
   let y = 0;
 
@@ -18,7 +18,7 @@ export const renderGrid = (rows, cols) => {
     y = c % cols;
     const cell = createCellElement();
     renderCell(cell, x, y);
-    gridContainer.appendChild(cell);
+    element.appendChild(cell);
     if (y === rows - 1) {
       x++;
     }

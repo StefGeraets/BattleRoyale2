@@ -1,8 +1,8 @@
 import { token, grid } from "@app/data/state";
-import { placeToken, moveToken } from "@app/components/token/token";
+import { resetDom } from "@app/spec/helpers";
+import { placeToken, moveToken } from "./token";
 import { UP, RIGHT, DOWN, LEFT } from "@app/data/constants";
 
-const resetDom = () => (document.body.innerHTML = ``);
 const resetGrid = () => {
   grid.rows = 24;
   grid.cols = 24;
@@ -45,6 +45,7 @@ describe("moveToken", () => {
     generateSmallGrid();
     setGridSize();
   });
+
   afterEach(() => {
     resetDom();
     resetGrid();
@@ -57,23 +58,23 @@ describe("moveToken", () => {
     const gridItem2b = document.querySelector(".grid-item-1-1");
     gridItem1a.appendChild(token.element);
 
-    expect(gridItem1a.firstChild).toBeTruthy();
+    expect(gridItem1a).toContainElement(token.element);
 
     moveToken(RIGHT);
-    expect(gridItem1a.firstChild).toBeFalsy();
-    expect(gridItem1b.firstChild).toBeTruthy();
+    expect(gridItem1a).toBeEmptyDOMElement();
+    expect(gridItem1b).toContainElement(token.element);
 
     moveToken(DOWN);
-    expect(gridItem1b.firstChild).toBeFalsy();
-    expect(gridItem2b.firstChild).toBeTruthy();
+    expect(gridItem1b).toBeEmptyDOMElement();
+    expect(gridItem2b).toContainElement(token.element);
 
     moveToken(LEFT);
-    expect(gridItem2b.firstChild).toBeFalsy();
-    expect(gridItem2a.firstChild).toBeTruthy();
+    expect(gridItem2b).toBeEmptyDOMElement();
+    expect(gridItem2a).toContainElement(token.element);
 
     moveToken(UP);
-    expect(gridItem2a.firstChild).toBeFalsy();
-    expect(gridItem1a.firstChild).toBeTruthy();
+    expect(gridItem2a).toBeEmptyDOMElement();
+    expect(gridItem1a).toContainElement(token.element);
   });
 
   it("should not move token beyond grid", () => {
@@ -83,30 +84,30 @@ describe("moveToken", () => {
     const gridItemBottomLeft = document.querySelector(".grid-item-2-0");
     gridItemTopLeft.appendChild(token.element);
 
-    expect(gridItemTopLeft.firstChild).toBeTruthy();
+    expect(gridItemTopLeft).toContainElement(token.element);
 
     moveToken(RIGHT);
     moveToken(RIGHT);
-    expect(gridItemTopRight.firstChild).toBeTruthy();
+    expect(gridItemTopRight).toContainElement(token.element);
     moveToken(RIGHT);
-    expect(gridItemTopRight.firstChild).toBeTruthy();
+    expect(gridItemTopRight).toContainElement(token.element);
 
     moveToken(DOWN);
     moveToken(DOWN);
-    expect(gridItemBottomRight.firstChild).toBeTruthy();
+    expect(gridItemBottomRight).toContainElement(token.element);
     moveToken(DOWN);
-    expect(gridItemBottomRight.firstChild).toBeTruthy();
+    expect(gridItemBottomRight).toContainElement(token.element);
 
     moveToken(LEFT);
     moveToken(LEFT);
-    expect(gridItemBottomLeft.firstChild).toBeTruthy();
+    expect(gridItemBottomLeft).toContainElement(token.element);
     moveToken(LEFT);
-    expect(gridItemBottomLeft.firstChild).toBeTruthy();
+    expect(gridItemBottomLeft).toContainElement(token.element);
 
     moveToken(UP);
     moveToken(UP);
-    expect(gridItemTopLeft.firstChild).toBeTruthy();
+    expect(gridItemTopLeft).toContainElement(token.element);
     moveToken(UP);
-    expect(gridItemTopLeft.firstChild).toBeTruthy();
+    expect(gridItemTopLeft).toContainElement(token.element);
   });
 });
