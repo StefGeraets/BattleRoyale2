@@ -63,7 +63,7 @@
       "jest/globals": true
     },
     "parserOptions": {
-      "ecmaVersion": 2017,
+      "ecmaVersion": 2018,
       "sourceType": "module"
     },
     "plugins": [
@@ -87,6 +87,13 @@
       "prettier/prettier": "error",
       "no-prototype-builtins": "off",
       "indent": "off"
+    }
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "^@app(.*)$": "<rootDir>/src/js$1",
+      "^.+\\.(css|less|scss)$": "babel-jest"
     }
   }
 }
