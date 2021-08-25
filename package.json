@@ -22,6 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
+    "@testing-library/jest-dom": "^5.14.1",
     "autoprefixer": "^10.3.1",
     "babel-jest": "^27.0.6",
     "babel-loader": "^8.0.6",
@@ -91,6 +92,9 @@
   },
   "jest": {
     "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/config/jest.setup.js"
+    ],
     "moduleNameMapper": {
       "^@app(.*)$": "<rootDir>/src/js$1",
       "^.+\\.(css|less|scss)$": "babel-jest"
