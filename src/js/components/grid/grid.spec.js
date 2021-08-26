@@ -14,7 +14,7 @@ describe("renderGrid", () => {
     const gridDom = document.querySelector("#grid");
     expect(gridDom).toBeEmptyDOMElement();
 
-    renderGrid(gridDom, 4, 4);
+    renderGrid(4, 4, gridDom);
     expect(gridDom.childElementCount).toBe(16);
     expect(gridDom.firstChild).toHaveClass("grid-item-0-0");
     expect(gridDom.lastChild).toHaveClass("grid-item-3-3");
