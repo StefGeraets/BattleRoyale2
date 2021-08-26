@@ -11,7 +11,7 @@
     <br />
     <a href="https://stefgeraets.github.io/battleroyale">View Demo</a>
     ·
-    <a href="https://github.com/StefGeraets/BattleRoyale2/gh/rules.pdf">View Rules</a>
+    <a href="https://github.com/StefGeraets/BattleRoyale2/blob/main/gh/rules.pdf">View Rules</a>
     ·
     <a href="https://github.com/StefGeraets/BattleRoyale2/issues">Report Bug</a>
     ·
@@ -37,7 +37,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#usage">Documentation</a></li>
     <li>
       <a href="#roadmap">Roadmap</a>
       <ul>
