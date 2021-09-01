@@ -1,7 +1,6 @@
 import { time } from "@app/data/state";
 import * as UI from "@app/ui/dm";
-
-const fpsEl = document.querySelector("#fps");
+import { fpsDebugContainer } from "@app/ui/elements";
 
 let fps, secondsPassed, oldTimestamp;
 
@@ -13,7 +12,7 @@ const calculateFps = (timestamp) => {
 };
 
 const loop = (timestamp) => {
-  fpsEl.textContent = `${calculateFps(timestamp)} fps`;
+  fpsDebugContainer.textContent = `${calculateFps(timestamp)} fps`;
 
   if (time.isPaused) {
     requestAnimationFrame(loop);
