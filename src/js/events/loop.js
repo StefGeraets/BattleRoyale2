@@ -1,10 +1,10 @@
 import { time } from "@app/data/state";
 import * as UI from "@app/ui/dm";
 
-const increaseTick = () => time.elapsed + time.tick;
+const increaseTick = () => (time.elapsed += time.tick);
 
 const loop = () => {
-  time.elapsed = increaseTick();
+  increaseTick();
   console.log(time.elapsed);
 };
 
