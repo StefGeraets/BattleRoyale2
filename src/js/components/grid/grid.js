@@ -1,6 +1,5 @@
 import "./grid.scss";
-
-const gridContainer = document.querySelector("#grid");
+import { gridContainer } from "@app/ui/elements";
 
 const createCellElement = () => document.createElement("div");
 // Creates an array of total cell count
