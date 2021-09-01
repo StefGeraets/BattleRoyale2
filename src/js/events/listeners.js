@@ -1,7 +1,6 @@
 import { handleKeyPress } from "./keyboardEvents";
 import { togglePlayPause } from "./loop";
-
-const playPauseButton = document.getElementById("playPause");
+import { playPauseButton } from "@app/ui/elements";
 
 export const initListeners = () => {
   window.addEventListener("keydown", handleKeyPress);
