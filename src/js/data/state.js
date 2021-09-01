@@ -12,6 +12,8 @@ export const grid = {
 };
 
 export const time = {
-  fps: 30,
+  tick: 100,
   isPlaying: false,
+  interval: "",
+  elapsed: 0,
 };
