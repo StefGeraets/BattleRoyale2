@@ -187,6 +187,11 @@ Thanks! :heart:
 
 - [x] generate grid
 - [x] play/pause
+- [ ] Calculate periods
+  - [ ] Safe area shown to player / not movable by DM
+  - [ ] Wall closing time
+  - [ ] rest period
+- [ ] Trigger events based on time
 - [ ] Display upcoming placed safeArea. Change where safeArea is set on click before time runs out.
 - [ ] place + animate settings for wall
 - [ ] Set safeArea
