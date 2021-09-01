@@ -3,7 +3,7 @@ import { moveToken } from "@app/components/token/token";
 import { togglePlayPause } from "@app/events/loop";
 
 export const handleKeyPress = (event) => {
-  switch (event.key) {
+  switch (event.code) {
     case "ArrowUp":
     case "w":
       moveToken(UP);
@@ -21,7 +21,7 @@ export const handleKeyPress = (event) => {
       moveToken(LEFT);
       break;
     case "p":
-    case " ": // Spacebar
+    case "Space": // Spacebar
       togglePlayPause();
       break;
     default:
