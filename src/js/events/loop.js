@@ -1,30 +1,21 @@
 import { time } from "@app/data/state";
 import * as UI from "@app/ui/dm";
-import { fpsDebugContainer } from "@app/ui/elements";
 
-let fps, secondsPassed, oldTimestamp;
+const increaseTick = () => time.elapsed + time.tick;
 
-const calculateFps = (timestamp) => {
-  secondsPassed = (timestamp - oldTimestamp) / 1000;
-  oldTimestamp = timestamp;
-  fps = Math.round(1 / secondsPassed);
-  return fps;
-};
-
-const loop = (timestamp) => {
-  fpsDebugContainer.textContent = `${calculateFps(timestamp)} fps`;
-
-  if (time.isPaused) {
-    requestAnimationFrame(loop);
-  }
+const loop = () => {
+  time.elapsed = increaseTick();
+  console.log(time.elapsed);
 };
 
 export const togglePlayPause = () => {
-  time.isPaused = !time.isPaused;
+  time.isPlaying = !time.isPlaying;
 
   UI.togglePlayPause();
 
-  if (time.isPaused) {
-    requestAnimationFrame(loop);
+  if (time.isPlaying) {
+    time.interval = setInterval(loop, time.tick);
+  } else {
+    clearInterval(time.interval);
   }
 };
