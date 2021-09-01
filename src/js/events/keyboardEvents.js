@@ -1,5 +1,6 @@
 import { UP, RIGHT, DOWN, LEFT } from "@app/data/constants";
 import { moveToken } from "@app/components/token/token";
+import { togglePlayPause } from "@app/events/loop";
 
 export const handleKeyPress = (event) => {
   switch (event.key) {
@@ -18,6 +19,10 @@ export const handleKeyPress = (event) => {
     case "ArrowLeft":
     case "a":
       moveToken(LEFT);
+      break;
+    case "p":
+    case " ": // Spacebar
+      togglePlayPause();
       break;
     default:
       break;
