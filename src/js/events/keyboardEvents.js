@@ -5,22 +5,22 @@ import { togglePlayPause } from "@app/events/loop";
 export const handleKeyPress = (event) => {
   switch (event.code) {
     case "ArrowUp":
-    case "w":
+    case "KeyW":
       moveToken(UP);
       break;
     case "ArrowRight":
-    case "d":
+    case "KeyD":
       moveToken(RIGHT);
       break;
     case "ArrowDown":
-    case "s":
+    case "KeyS":
       moveToken(DOWN);
       break;
     case "ArrowLeft":
-    case "a":
+    case "KeyA":
       moveToken(LEFT);
       break;
-    case "p":
+    case "KeyP":
     case "Space": // Spacebar
       togglePlayPause();
       break;
