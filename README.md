@@ -88,7 +88,7 @@ What you need to install the program
 
 ### Scripts
 
-Usefull scripts during development
+Useful scripts during development
 
 - **Build**: `yarn build`
 - **Start Dev environment**: `yarn dev`
