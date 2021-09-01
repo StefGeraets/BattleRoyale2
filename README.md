@@ -88,7 +88,7 @@ What you need to install the program
 
 ### Scripts
 
-Usefull scripts during development
+Useful scripts during development
 
 - **Build**: `yarn build`
 - **Start Dev environment**: `yarn dev`
@@ -186,7 +186,7 @@ Thanks! :heart:
 ### DM screen
 
 - [x] generate grid
-- [ ] play/pause
+- [x] play/pause
 - [ ] Display upcoming placed safeArea. Change where safeArea is set on click before time runs out.
 - [ ] place + animate settings for wall
 - [ ] Set safeArea

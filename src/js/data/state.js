@@ -10,3 +10,8 @@ export const grid = {
   rows: 24,
   cols: 24,
 };
+
+export const time = {
+  fps: 30,
+  isPlaying: false,
+};

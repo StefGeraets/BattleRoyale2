@@ -20,6 +20,7 @@
       </header>
 
       <main id="map">
+        <div id="fps">0fps</div>
         <div id="grid"></div>
       </main>
 
@@ -29,7 +30,41 @@
 
       <aside id="settings">
         <section id="top"></section>
-        <section id="bottom"></section>
+        <section id="bottom">
+          <button id="playPause" class="button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              id="pause"
+              class="button-icon"
+            >
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              id="play"
+              class="button-icon active"
+            >
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </button>
+        </section>
       </aside>
     </div>
   </body>
