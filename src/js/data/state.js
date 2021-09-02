@@ -17,58 +17,71 @@ export const time = {
   interval: "",
   elapsed: 0,
   total: 3 * 60 * 1000, // 3 minutes for testing purposes,
-  percentiles: [
+  events: [
     {
       name: "beforeStart",
+      value: 10,
       percentage: 10,
     },
     {
       name: "firstZoneStart",
+      value: 11,
       percentage: 21,
     },
     {
       name: "firstZoneCountdown",
+      value: 4,
       percentage: 25,
     },
     {
       name: "firstZoneShrink",
-      percentage: 30,
+      value: 9,
+      percentage: 34,
     },
     {
       name: "secondZoneStart",
-      percentage: 41,
+      value: 11,
+      percentage: 35,
     },
     {
       name: "secondZoneCountdown",
-      percentage: 45,
+      value: 4,
+      percentage: 39,
     },
     {
       name: "secondZoneShrink",
-      percentage: 50,
+      value: 9,
+      percentage: 48,
     },
     {
       name: "thirdZoneStart",
-      percentage: 57,
+      value: 7,
+      percentage: 55,
     },
     {
       name: "thirdZoneCountdown",
-      percentage: 61,
+      value: 4,
+      percentage: 59,
     },
     {
       name: "thirdZoneShrink",
-      percentage: 66,
+      value: 9,
+      percentage: 68,
     },
     {
       name: "fourthZoneStart",
-      percentage: 73,
+      value: 11,
+      percentage: 79,
     },
     {
       name: "fourthZoneCountdown",
-      percentage: 77,
+      value: 4,
+      percentage: 83,
     },
     {
       name: "fourthZoneShrink",
-      percentage: 82,
+      value: 9,
+      percentage: 92,
     },
   ],
 };

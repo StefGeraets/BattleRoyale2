@@ -4,9 +4,9 @@ import * as UI from "@app/ui/dm";
 const increaseTick = () => (time.elapsed += time.tick);
 
 const calculateGameTimes = () =>
-  time.percentiles.map((percentageZone) => ({
-    time: time.total * (percentageZone.percentage / 100),
-    name: percentageZone.name,
+  time.events.map((event) => ({
+    time: time.total * (event.percentage / 100),
+    name: event.name,
   }));
 
 const loop = () => {
