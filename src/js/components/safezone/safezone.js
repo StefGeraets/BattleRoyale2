@@ -21,7 +21,15 @@ const clearSafeZones = () => {
   });
 };
 
-export const placeSafeZone = (gridItem) => {
-  clearSafeZones();
+const setSafeZone = (gridItem) => {
   gridItem.target.classList.add(SAFE_ZONE_CLASS);
+};
+
+export const safeZonePlacement = (gridItem) => {
+  clearSafeZones();
+  setSafeZone(gridItem);
+};
+
+export const setSafeZoneWidth = (width) => {
+  mapContainer.style.setProperty("--safe-zone-width", width);
 };

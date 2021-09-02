@@ -5,7 +5,7 @@ import {
   setSafeZoneToPointerStyles,
   showSafeZonePointer,
   removeSafeZonePointer,
-  placeSafeZone,
+  safeZonePlacement,
 } from "@app/components/safezone/safezone";
 
 export const initListeners = () => {
@@ -15,6 +15,6 @@ export const initListeners = () => {
   EL.mapContainer.addEventListener("mouseenter", showSafeZonePointer);
   EL.mapContainer.addEventListener("mouseleave", removeSafeZonePointer);
   EL.getGridItems().forEach((item) => {
-    item.addEventListener("click", placeSafeZone);
+    item.addEventListener("click", safeZonePlacement);
   });
 };
