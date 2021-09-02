@@ -1,5 +1,5 @@
 import "./safezone.scss";
-import { mapContainer, gridItems, safeZonePlacer } from "@app/ui/elements";
+import { mapContainer, getGridItems, safeZonePlacer } from "@app/ui/elements";
 import { SAFE_ZONE_CLASS } from "@app/data/constants";
 
 export const setSafeZoneToPointerStyles = (event) => {
@@ -16,12 +16,12 @@ export const removeSafeZonePointer = () => {
 };
 
 const clearSafeZones = () => {
-  gridItems.forEach((item) => {
+  getGridItems().forEach((item) => {
     item.classList.remove(SAFE_ZONE_CLASS);
   });
 };
 
 export const placeSafeZone = (gridItem) => {
   clearSafeZones();
-  gridItem.classList.add(SAFE_ZONE_CLASS);
+  gridItem.target.classList.add(SAFE_ZONE_CLASS);
 };
