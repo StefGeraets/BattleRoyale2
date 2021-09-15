@@ -1,0 +1,18 @@
+#safeZonePlacer {
+  display: block;
+  position: absolute;
+  width: calc(var(--safe-zone-width) * var(--cell-width));
+  height: calc(var(--safe-zone-width) * var(--cell-width));
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+  border: 2px solid transparentize(#facc15, 0.1);
+  border-radius: 100%;
+  pointer-events: none;
+  transform: translate(-50%, calc(-50% - 48px));
+  opacity: 0;
+  transition: opacity 500ms ease 500ms;
+
+  &.active {
+    opacity: 1;
+  }
+}
