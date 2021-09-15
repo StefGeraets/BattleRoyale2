@@ -1,5 +1,5 @@
 import { token, grid } from "@app/data/state";
-import { resetDom } from "@app/spec/helpers";
+import { resetDom, render3x3Grid } from "@app/spec/helpers";
 import { placeToken, moveToken } from "./token";
 import { UP, RIGHT, DOWN, LEFT } from "@app/data/constants";
 
@@ -8,19 +8,6 @@ const resetGrid = () => {
   grid.cols = 24;
   return grid;
 };
-
-const generateSmallGrid = () =>
-  (document.body.innerHTML = `<div id="grid">
-    <div class="grid-item-0-0"></div>
-    <div class="grid-item-0-1"></div>
-    <div class="grid-item-0-2"></div>
-    <div class="grid-item-1-0"></div>
-    <div class="grid-item-1-1"></div>
-    <div class="grid-item-1-2"></div>
-    <div class="grid-item-2-0"></div>
-    <div class="grid-item-2-1"></div>
-    <div class="grid-item-2-2"></div>
-  </div>`);
 
 const setGridSize = () => {
   grid.rows = 3;
@@ -42,7 +29,7 @@ describe("placeToken", () => {
 
 describe("moveToken", () => {
   beforeEach(() => {
-    generateSmallGrid();
+    render3x3Grid();
     setGridSize();
   });
 

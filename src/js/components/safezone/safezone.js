@@ -1,6 +1,6 @@
 import "./safezone.scss";
 import { mapContainer, getGridItems, safeZonePlacer } from "@app/ui/elements";
-import { SAFE_ZONE_CLASS } from "@app/data/constants";
+import { SAFE_ZONE_CLASS, ACTIVE_CLASS } from "@app/data/constants";
 
 export const setSafeZoneToPointerStyles = (event) => {
   mapContainer.style.setProperty("--mouse-x", event.pageX + "px");
@@ -8,11 +8,11 @@ export const setSafeZoneToPointerStyles = (event) => {
 };
 
 export const showSafeZonePointer = () => {
-  safeZonePlacer.classList.add("active");
+  safeZonePlacer.classList.add(ACTIVE_CLASS);
 };
 
 export const removeSafeZonePointer = () => {
-  safeZonePlacer.classList.remove("active");
+  safeZonePlacer.classList.remove(ACTIVE_CLASS);
 };
 
 const clearSafeZones = () => {
