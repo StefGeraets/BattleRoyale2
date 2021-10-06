@@ -6,3 +6,5 @@ export const safeZonePlacer = document.getElementById("safeZonePlacer");
 export const mapContainer = document.getElementById("map");
 export const getGridItems = () => document.querySelectorAll(".grid-item");
 export const timebar = document.getElementById("timebar");
+export const timer = document.getElementById("timer");
+export const rootElement = document.documentElement;

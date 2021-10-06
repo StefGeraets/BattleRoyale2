@@ -1,3 +1,7 @@
+import {
+  pauseTimerIndicator,
+  startTimerIndicator,
+} from "@app/components/timebar/timebar";
 import { time } from "@app/data/state";
 import * as UI from "@app/ui/dm";
 
@@ -30,8 +34,10 @@ export const togglePlayPause = () => {
   UI.togglePlayPause();
 
   if (time.isPlaying) {
+    startTimerIndicator();
     time.interval = setInterval(loop, time.tick);
   } else {
+    pauseTimerIndicator();
     clearInterval(time.interval);
   }
 };

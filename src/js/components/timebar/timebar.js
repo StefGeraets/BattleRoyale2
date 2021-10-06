@@ -1,9 +1,17 @@
 import "./timebar.scss";
 import { time } from "@app/data/state";
-import { timebar } from "@app/ui/elements";
+import { rootElement, timebar, timer } from "@app/ui/elements";
 
 export const renderTimebar = (element = timebar) => {
   generateTimeBlocks(calculateTimeBlocks(), element);
+  rootElement.style.setProperty("--game-time", `${time.total}ms`);
+};
+
+export const startTimerIndicator = () => {
+  timer.style.animationPlayState = "running";
+};
+export const pauseTimerIndicator = () => {
+  timer.style.animationPlayState = "paused";
 };
 
 const calculateTimeBlocks = () => {

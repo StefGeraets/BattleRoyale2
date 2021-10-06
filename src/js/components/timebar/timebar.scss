@@ -22,4 +22,23 @@
       border-top: 4vh solid $c-green-600;
     }
   }
+
+  #timer {
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    background: $c-gray-50;
+    animation: gameTimer var(--game-time) linear forwards;
+    animation-play-state: paused;
+  }
+
+  @keyframes gameTimer {
+    from {
+      top: 0;
+    }
+    to {
+      top: 100%;
+    }
+  }
 }
