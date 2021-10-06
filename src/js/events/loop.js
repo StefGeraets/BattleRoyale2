@@ -9,9 +9,10 @@ const calculateGameTimes = () =>
     name: event.name,
   }));
 
+const timezones = calculateGameTimes();
+
 const loop = () => {
   increaseTick();
-  const timezones = calculateGameTimes();
   const event = timezones.find((element) => element.time === time.elapsed);
 
   if (event !== undefined) {
@@ -37,10 +38,12 @@ export const togglePlayPause = () => {
 
 const triggerTimeEvent = (event) => {
   console.log(event);
-  switch (event) {
+  switch (event.name) {
     case "beforeStart":
+      console.log("Before start");
       break;
     case "firstZoneStart":
+      console.log("first zone start");
       break;
     case "firstZoneCountdown":
       break;
