@@ -42,30 +42,12 @@ const triggerTimeEvent = (event) => {
     case "beforeStart":
       console.log("Before start");
       break;
-    case "firstZoneStart":
+    case "zoneStart":
       console.log("first zone start");
       break;
-    case "firstZoneCountdown":
+    case "zoneCountdown":
       break;
-    case "firstZoneShrink":
-      break;
-    case "secondZoneStart":
-      break;
-    case "secondZoneCountdown":
-      break;
-    case "secondZoneShrink":
-      break;
-    case "thirdZoneStart":
-      break;
-    case "thirdZoneCountdown":
-      break;
-    case "thirdZoneShrink":
-      break;
-    case "fourthZoneStart":
-      break;
-    case "fourthZoneCountdown":
-      break;
-    case "fourthZoneShrink":
+    case "zoneShrink":
       break;
   }
 };
