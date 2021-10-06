@@ -5,9 +5,3 @@ export const initDMGame = () => {
   dmView();
   initListeners();
 };
-
-// const playerGame = () => {
-//   renderMap();
-
-//   eventListeners();
-// }
