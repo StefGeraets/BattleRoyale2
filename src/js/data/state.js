@@ -41,47 +41,47 @@ export const time = {
     {
       name: "zoneStart",
       value: 11,
-      percentage: 35,
+      percentage: 45,
     },
     {
       name: "zoneCountdown",
       value: 4,
-      percentage: 39,
+      percentage: 49,
     },
     {
       name: "zoneShrink",
       value: 9,
-      percentage: 48,
+      percentage: 58,
     },
     {
       name: "zoneStart",
       value: 7,
-      percentage: 55,
+      percentage: 65,
     },
     {
       name: "zoneCountdown",
       value: 4,
-      percentage: 59,
+      percentage: 69,
     },
     {
       name: "zoneShrink",
       value: 9,
-      percentage: 68,
+      percentage: 78,
     },
     {
       name: "zoneStart",
-      value: 11,
-      percentage: 79,
+      value: 7,
+      percentage: 85,
     },
     {
       name: "zoneCountdown",
       value: 4,
-      percentage: 83,
+      percentage: 89,
     },
     {
       name: "zoneShrink",
       value: 9,
-      percentage: 92,
+      percentage: 98,
     },
   ],
 };

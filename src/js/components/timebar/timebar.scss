@@ -1,3 +1,5 @@
+@import "@scss/utils/variables";
+
 #timebar {
   background: linear-gradient(
       transparentize($c-gray-100, 0.9),
@@ -5,14 +7,19 @@
     ),
     $c-sky-900;
   position: relative;
+  display: block;
 
   // example for styling
   .timeblock {
-    position: absolute;
-    top: 10vh;
     width: 100%;
-    height: 20vh;
-    background: $c-red-600;
-    border-top: 5vh solid $c-green-600;
+
+    &:nth-child(3) {
+      border-top: 1px solid cyan;
+    }
+
+    &:nth-child(2n + 4) {
+      background: $c-red-600;
+      border-top: 4vh solid $c-green-600;
+    }
   }
 }
