@@ -16,7 +16,6 @@ const calculateGameTimes = () =>
 const timezones = calculateGameTimes();
 
 const loop = () => {
-  increaseTick();
   const event = timezones.find((element) => element.time === time.elapsed);
 
   if (event !== undefined) {
@@ -26,6 +25,7 @@ const loop = () => {
   if (time.elapsed >= time.total) {
     clearInterval(time.interval);
   }
+  increaseTick();
 };
 
 export const togglePlayPause = () => {
