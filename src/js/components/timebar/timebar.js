@@ -17,21 +17,14 @@ export const pauseTimerIndicator = () => {
 const calculateTimeBlocks = () => {
   const timings = [];
   for (const event of time.events) {
-    const lastIndex = timings.length - 1;
-    switch (event.name) {
-      case "beforeStart":
-        timings.push(event.value);
-        break;
-      case "zoneStart":
-        timings.push(event.value);
-        break;
-      case "zoneCountdown":
-        timings.push(event.value);
-        break;
-      case "zoneShrink":
-        timings[lastIndex] = timings[lastIndex] + event.value;
-        break;
+    if (event.name === "zoneShrink") {
+      const lastIndex = timings.length - 1;
+      timings[lastIndex] = timings[lastIndex] + event.value;
+
+      continue;
     }
+
+    timings.push(event.value);
   }
 
   return timings;
