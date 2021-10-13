@@ -4,7 +4,17 @@ import { rootElement, timebar, timer } from "@app/ui/elements";
 
 export const renderTimebar = (element = timebar) => {
   generateTimeBlocks(calculateTimeBlocks(), element);
+  setCountdownHeight(element);
   rootElement.style.setProperty("--game-time", `${time.total}ms`);
+};
+
+// As the timeblock height are defined in percentages, the border-top must be defined in pixels
+const setCountdownHeight = (element) => {
+  const timebarHeight = element.offsetHeight;
+  rootElement.style.setProperty(
+    "--countdown-height",
+    `${timebarHeight * 0.04}px`
+  );
 };
 
 export const startTimerIndicator = () => {
