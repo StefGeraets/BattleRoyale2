@@ -1,12 +1,18 @@
 import { time } from "@app/data/state";
+import {
+  countdown,
+  pauseClock,
+  resumeClock,
+} from "@app/components/countdown/countdown";
 import * as UI from "@app/ui/dm";
 
 const increaseTick = () => (time.elapsed += time.tick);
 
 const calculateGameTimes = () =>
   time.events.map((event) => ({
-    time: time.total * (event.percentage / 100),
+    time: time.total * (event.percentage / 100), // TODO: Refactor to reduce, to remove percentage from event state
     name: event.name,
+    value: event.value,
   }));
 
 const timezones = calculateGameTimes();
@@ -31,21 +37,26 @@ export const togglePlayPause = () => {
 
   if (time.isPlaying) {
     time.interval = setInterval(loop, time.tick);
+    if (time.countdown.remaining > 0) {
+      resumeClock();
+    }
   } else {
     clearInterval(time.interval);
+    pauseClock();
   }
 };
 
 const triggerTimeEvent = (event) => {
-  console.log(event);
   switch (event.name) {
     case "beforeStart":
-      console.log("Before start");
+      // before start
       break;
     case "zoneStart":
-      console.log("first zone start");
+      // hold time
       break;
     case "zoneCountdown":
+      // start countdown
+      countdown(event);
       break;
     case "zoneShrink":
       break;
