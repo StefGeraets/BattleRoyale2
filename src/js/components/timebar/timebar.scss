@@ -1,0 +1,44 @@
+@import "@scss/utils/variables";
+
+#timebar {
+  background: linear-gradient(
+      transparentize($c-gray-100, 0.9),
+      transparentize($c-gray-100, 0.9)
+    ),
+    $c-sky-900;
+  position: relative;
+  display: block;
+
+  // example for styling
+  .timeblock {
+    width: 100%;
+
+    &:nth-child(3) {
+      border-top: 1px solid cyan;
+    }
+
+    &:nth-child(2n + 4) {
+      background: $c-red-600;
+      border-top: var(--countdown-height) solid $c-green-600;
+    }
+  }
+
+  #timer {
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    background: $c-gray-50;
+    animation: gameTimer var(--game-time) linear forwards;
+    animation-play-state: paused;
+  }
+
+  @keyframes gameTimer {
+    from {
+      top: 0;
+    }
+    to {
+      top: 100%;
+    }
+  }
+}
