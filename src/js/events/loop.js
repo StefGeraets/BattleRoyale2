@@ -10,7 +10,7 @@ const increaseTick = () => (time.elapsed += time.tick);
 
 const calculateGameTimes = () =>
   time.events.map((event) => ({
-    time: time.total * (event.percentage / 100), // TODO: Refactor to reduce, to remove percentage from event state
+    time: time.total * (event.percentage / 100),
     name: event.name,
     value: event.value,
   }));
