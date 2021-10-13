@@ -8,18 +8,10 @@ export const renderTimebar = (element = timebar) => {
   rootElement.style.setProperty("--game-time", `${time.total}ms`);
 };
 
-// As the timeblock height are defined in percentages, the border-top must be defined in pixels
-const setCountdownHeight = (element) => {
-  const timebarHeight = element.offsetHeight;
-  rootElement.style.setProperty(
-    "--countdown-height",
-    `${timebarHeight * 0.04}px`
-  );
-};
-
 export const startTimerIndicator = () => {
   timer.style.animationPlayState = "running";
 };
+
 export const pauseTimerIndicator = () => {
   timer.style.animationPlayState = "paused";
 };
@@ -47,3 +39,11 @@ const generateTimeBlocks = (blockHeights, element) =>
     timeBlock.style.height = `${blockHeight}%`;
     element.append(timeBlock);
   });
+
+const setCountdownHeight = (element) => {
+  const timebarHeight = element.offsetHeight;
+  rootElement.style.setProperty(
+    "--countdown-height",
+    `${timebarHeight * 0.04}px`
+  );
+};
