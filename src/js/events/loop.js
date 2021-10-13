@@ -1,3 +1,7 @@
+import {
+  pauseTimerIndicator,
+  startTimerIndicator,
+} from "@app/components/timebar/timebar";
 import { time } from "@app/data/state";
 import {
   countdown,
@@ -18,7 +22,6 @@ const calculateGameTimes = () =>
 const timezones = calculateGameTimes();
 
 const loop = () => {
-  increaseTick();
   const event = timezones.find((element) => element.time === time.elapsed);
 
   if (event !== undefined) {
@@ -28,6 +31,7 @@ const loop = () => {
   if (time.elapsed >= time.total) {
     clearInterval(time.interval);
   }
+  increaseTick();
 };
 
 export const togglePlayPause = () => {
@@ -36,11 +40,13 @@ export const togglePlayPause = () => {
   UI.togglePlayPause();
 
   if (time.isPlaying) {
+    startTimerIndicator();
     time.interval = setInterval(loop, time.tick);
     if (time.countdown.remaining > 0) {
       resumeClock();
     }
   } else {
+    pauseTimerIndicator();
     clearInterval(time.interval);
     pauseClock();
   }
