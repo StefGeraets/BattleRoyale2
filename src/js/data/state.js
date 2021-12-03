@@ -17,6 +17,10 @@ export const time = {
   interval: "",
   elapsed: 0,
   total: 3 * 60 * 1000, // 3 minutes for testing purposes,
+  countdown: {
+    deadline: 0,
+    remaining: 0,
+  },
   events: [
     {
       name: "beforeStart",
